@@ -1,4 +1,3 @@
-
 <?php
 
 add_action('wp_enqueue_scripts', function () {
@@ -6,6 +5,6 @@ add_action('wp_enqueue_scripts', function () {
         'ecocane-child-style',
         get_stylesheet_uri(),
         ['organic-store-style'],
-        '1.0.0'
+        '1.1.0'
     );
 });
