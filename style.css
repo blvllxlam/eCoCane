@@ -1,7 +1,7 @@
 /*
 Theme Name: eCoCane Child
 Template: organic-store
-Version: 1.1.0
+Version: 1.2.0
 */
 
 /* eCoCane — clean, natural storefront */
@@ -245,5 +245,134 @@ footer,
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* eCoCane v1.2 — explicit overrides for WordPress global styles */
+body,
+.editor-styles-wrapper {
+  color: var(--ecocane-text) !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6,
+.has-contrast-color {
+  color: var(--ecocane-text) !important;
+}
+
+p,
+.wp-block-paragraph {
+  color: var(--ecocane-muted);
+}
+
+a,
+.wp-block-navigation a {
+  transition: color .18s ease, background-color .18s ease, border-color .18s ease;
+}
+
+.wp-block-button__link,
+.wp-element-button,
+button,
+input[type="submit"],
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  background-color: var(--ecocane-green) !important;
+  border: 1px solid var(--ecocane-green) !important;
+  border-radius: 7px !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  box-shadow: none;
+}
+
+.wp-block-button__link:hover,
+.wp-element-button:hover,
+button:hover,
+input[type="submit"]:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+  background-color: var(--ecocane-green-dark) !important;
+  border-color: var(--ecocane-green-dark) !important;
+  color: #fff !important;
+}
+
+.wp-block-cover {
+  border-radius: var(--ecocane-radius);
+  overflow: hidden;
+}
+
+.woocommerce ul.products li.product,
+.wc-block-grid__product,
+.wc-block-product-template .wp-block-post,
+.wc-block-product-template > li {
+  box-sizing: border-box;
+  padding: 14px !important;
+  border: 1px solid var(--ecocane-border) !important;
+  border-radius: var(--ecocane-radius) !important;
+  background: #fff !important;
+  overflow: hidden;
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+}
+
+.woocommerce ul.products li.product:hover,
+.wc-block-grid__product:hover,
+.wc-block-product-template .wp-block-post:hover,
+.wc-block-product-template > li:hover {
+  border-color: #cbd9cc !important;
+  box-shadow: 0 8px 24px rgba(29, 70, 53, .08);
+  transform: translateY(-2px);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.wc-block-grid__product-title,
+.wc-block-components-product-name,
+.wc-block-product-template .wp-block-post-title {
+  color: var(--ecocane-text) !important;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.woocommerce ul.products li.product .price,
+.wc-block-grid__product-price,
+.wc-block-components-product-price {
+  color: var(--ecocane-green) !important;
+  font-weight: 700;
+}
+
+.woocommerce ul.products li.product a img,
+.wc-block-grid__product-image img,
+.wc-block-components-product-image img {
+  border-radius: 8px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  border: 1px solid var(--ecocane-border) !important;
+  border-radius: 7px !important;
+}
+
+.site-header,
+header,
+.wp-block-template-part[area="header"] {
+  color: var(--ecocane-text);
+}
+
+footer,
+.wp-block-template-part[area="footer"] {
+  color: #e9efe9;
+}
+
+@media (max-width: 782px) {
+  .woocommerce ul.products li.product,
+  .wc-block-grid__product,
+  .wc-block-product-template .wp-block-post,
+  .wc-block-product-template > li {
+    padding: 10px !important;
   }
 }
