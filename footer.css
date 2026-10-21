@@ -1,0 +1,73 @@
+/* Стили подвала сайта. */
+
+
+
+/* Базовый цвет текста подвала темы. Специальный подвал eCoCane оформлен ниже. */
+footer,
+.wp-block-template-part[area="footer"] {
+  color: #e9efe9;
+}
+
+/* Размер логотипа в подвале. */
+.ecocane-footer .ecocane-brand {
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  min-height: 48px;
+  font-size: 28px;
+  font-weight: 750;
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+
+.ecocane-footer .ecocane-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+}
+
+/* Клавиатурный фокус на логотипе в шапке и подвале. */
+.ecocane-header .ecocane-brand:focus-visible,
+.ecocane-footer .ecocane-brand:focus-visible {
+  outline: 2px solid var(--ecocane-green);
+  outline-offset: 4px;
+}
+
+/* Подвал eCoCane: тёмно-зелёный фон и верхняя разделительная линия. */
+.ecocane-footer {
+  border-top: 1px solid var(--ecocane-border);
+  background: var(--ecocane-green-dark);
+  color: #fff;
+}
+
+/* Логотип и пункты меню подвала: белый цвет и без подчёркивания. */
+.ecocane-footer .ecocane-brand,
+.ecocane-footer .wp-block-site-title a,
+.ecocane-footer .wp-block-navigation a,
+.ecocane-footer .wp-block-navigation-item__content {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Дополнительно фиксирует белый цвет содержимого навигационных ссылок подвала. */
+.ecocane-footer .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content {
+  color: #fff;
+}
+
+/* Цвет подписей пунктов навигации в подвале. */
+.ecocane-footer .wp-block-navigation-item__label {
+  color: #fff !important;
+}
+
+/* Цвет ссылки меню подвала при наведении. */
+.ecocane-footer .wp-block-navigation a:hover {
+  color: #e1eedf;
+}
+
+/* Дополнительная подпись или примечание в подвале. */
+.ecocane-footer__note {
+  margin: 20px 0 0;
+  color: #e1eedf;
+  font-size: .88rem;
+}

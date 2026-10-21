@@ -1,0 +1,316 @@
+/* Адаптивные стили для мобильных экранов и настройки доступности. */
+
+
+
+/* Общая адаптация стандартных элементов темы для экранов шириной до 782px. */
+@media (max-width: 782px) {
+  /* Немного уменьшает межстрочный интервал всего текста на небольшом экране. */
+  body {
+    line-height: 1.55;
+  }
+
+  /* Уменьшает внутренние отступы стандартных карточек каталога. */
+  .woocommerce ul.products li.product,
+  .wc-block-grid__product,
+  .wc-block-product-template__responsive li {
+    padding: 10px;
+  }
+
+  /* Минимальная высота стандартного блока-обложки на телефоне. */
+  .wp-block-cover {
+    min-height: 280px;
+  }
+
+  /* Кнопки темы на телефоне не выходят за ширину экрана и допускают перенос текста. */
+  .wp-block-button__link,
+  .woocommerce a.button,
+  .woocommerce button.button {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+/* Убирает анимации, если пользователь включил системную настройку уменьшения движения. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Настройки шапки, промоблока, категорий и товарных сеток для экранов до 782px. */
+@media (max-width: 782px) {
+  /* На небольшом экране логотип, действия и свёрнутое меню остаются в одной строке. */
+  .ecocane-header {
+    grid-template-columns: minmax(156px, 1fr) auto auto;
+    grid-template-rows: 90px;
+  }
+
+  .ecocane-header > .wp-block-group.is-layout-flex:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  /* Кнопка мобильного меню располагается справа от корзины и аккаунта. */
+  .ecocane-header .wp-block-navigation {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  /* Ссылки внутри раскрытого мобильного меню располагаются вертикально. */
+  .ecocane-header .wp-block-navigation__container {
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+
+  /* Промоблок: расстояние между текстом и изображением на узком экране. */
+  .ecocane-hero {
+    gap: 28px;
+    margin-bottom: 60px !important;
+  }
+
+  /* Высота главного изображения на планшете и телефоне. */
+  .ecocane-hero-visual {
+    height: 300px;
+  }
+
+  /* Категории на узком экране располагаются в две колонки. */
+  .ecocane-categories--cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  /* Минимальная высота карточки категории на узком экране. */
+  .ecocane-categories--cards .ecocane-category {
+    min-height: 160px;
+  }
+
+  /* Высота фотографии категории на узком экране. */
+  .ecocane-category__image,
+  .ecocane-category__placeholder {
+    height: 112px;
+  }
+
+  /* Каталог на планшете и телефоне: две карточки товара в строке. */
+  .ecocane-shop .wc-block-product-template,
+  .single-product .wp-block-woocommerce-product-collection .wc-block-product-template {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+
+  /* Уменьшает внутренние поля карточек каталога на узком экране. */
+  .ecocane-shop .wc-block-product,
+  .single-product .wp-block-woocommerce-product-collection .wc-block-product {
+    padding: 10px;
+  }
+
+  /* Главная: две карточки товара в строке на узком экране. */
+  .ecocane-home .woocommerce ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Длинное название товара полностью переносится на странице товара. */
+  .single-product .ecocane-product-title {
+    overflow: visible;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}
+
+/* Компактная шапка телефона: логотип, корзина, аккаунт и кнопка меню в одной строке. */
+@media (max-width: 520px) {
+  .ecocane-header {
+    grid-template-columns: minmax(136px, 1fr) auto auto;
+    grid-template-rows: 78px;
+    padding: 0 !important;
+  }
+
+  .ecocane-header .ecocane-brand {
+    padding: 6px 10px;
+  }
+
+  .ecocane-header .wc-block-mini-cart__button {
+    min-width: 42px;
+    padding: 4px !important;
+  }
+
+  .ecocane-header .wc-block-mini-cart__icon,
+  .ecocane-header .wc-block-customer-account__link svg,
+  .ecocane-header .wc-block-customer-account__link img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ecocane-header .wp-block-navigation__responsive-container-open {
+    padding: 5px !important;
+  }
+
+  .ecocane-wholesale {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 24px 20px;
+  }
+
+  .ecocane-wholesale__contact {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .ecocane-wholesale__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .ecocane-wholesale__icon svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* Дополнительная настройка карточек товаров главной для экранов уже 520px. */
+@media (max-width: 520px) {
+  /* Расстояние и две колонки товарной сетки главной на небольших телефонах. */
+  .ecocane-home .woocommerce ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  /* Карточки главной на мобильном экране приводим к тому же формату, что и в каталоге. */
+  .ecocane-home .woocommerce ul.products li.product {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  /* Пропорции фотографии товара на мобильной главной. */
+  .ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link > img {
+    aspect-ratio: 1;
+    margin: 0;
+  }
+
+  /* Название товара в мобильной карточке не обрезаем многоточием. */
+  .ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link > .woocommerce-loop-product__title {
+    display: block;
+    margin: 0 0 6px;
+    font-size: .8rem !important;
+    line-height: 1.3;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  /* Верхний отступ нижней части карточки с ценой и кнопкой на телефоне. */
+  .ecocane-home .woocommerce ul.products li.product > p {
+    margin: 6px 0 0;
+  }
+
+  /* Скрывает лишние переводы строк в мобильной карточке товара. */
+  .ecocane-home .woocommerce ul.products li.product > p > br {
+    display: none;
+  }
+
+  /* Выравнивание цены товара на мобильной главной по центру. */
+  .ecocane-home .woocommerce ul.products li.product > p > .price,
+  .ecocane-home .woocommerce ul.products li.product > p > a > .price {
+    text-align: center;
+  }
+
+  /* Прижимает кнопку покупки к нижнему краю карточки. */
+  .ecocane-home .woocommerce ul.products li.product > p > .button {
+    margin-top: auto;
+  }
+
+  /* Компактный размер кнопки покупки на небольшом экране. */
+  .ecocane-home .woocommerce ul.products li.product .button {
+    padding: .65em .15em;
+    font-size: .72rem;
+    white-space: nowrap;
+  }
+}
+
+/* Настройки страниц и блоков для узких экранов — до 480px. */
+@media (max-width: 480px) {
+  /* Боковые поля главной и каталога на телефонах. */
+  .ecocane-home,
+  .ecocane-shop {
+    padding-right: 18px !important;
+    padding-left: 18px !important;
+  }
+
+  /* Уменьшает главный заголовок промоблока на узком экране. */
+  .ecocane-hero__title {
+    font-size: clamp(2.25rem, 12vw, 3rem);
+  }
+
+  /* Складывает кнопки промоблока вертикально на телефоне. */
+  .ecocane-hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  /* Высота фотографии категории на самом узком экране. */
+  .ecocane-category__image,
+  .ecocane-category__placeholder {
+    height: 132px;
+  }
+}
+
+/* Одна колонка категорий остаётся удобной только на самых узких телефонах. */
+@media (max-width: 359px) {
+  .ecocane-header {
+    grid-template-columns: minmax(116px, 1fr) auto auto;
+    grid-template-rows: 72px;
+  }
+
+  .ecocane-header > .wp-block-group.is-layout-flex:nth-child(2) {
+    gap: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .ecocane-header .ecocane-brand {
+    padding: 4px 8px;
+  }
+
+  .ecocane-header .wc-block-mini-cart__icon,
+  .ecocane-header .wc-block-customer-account__link svg,
+  .ecocane-header .wc-block-customer-account__link img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .ecocane-categories--cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ecocane-categories--cards .ecocane-category {
+    min-height: 180px;
+  }
+
+  .ecocane-home .woocommerce ul.products,
+  .ecocane-shop .wc-block-product-template,
+  .single-product .wp-block-woocommerce-product-collection .wc-block-product-template {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .ecocane-home .woocommerce ul.products li.product {
+    height: auto;
+    min-height: 266px;
+  }
+}

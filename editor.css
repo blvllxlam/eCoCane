@@ -1,0 +1,94 @@
+.ecocane-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(28px, 4vw, 52px);
+  background: #285c45;
+  color: #fff;
+}
+
+.ecocane-header > .wp-block-group.is-layout-flex {
+  display: contents;
+}
+
+.ecocane-header .ecocane-brand {
+  display: block;
+  width: clamp(160px, 20vw, 230px);
+  flex: 0 1 230px;
+  box-sizing: content-box;
+  padding-right: 28px;
+  border-right: 1px solid rgba(255, 255, 255, .3);
+  line-height: 0;
+}
+
+.ecocane-header .ecocane-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ecocane-header .wp-block-navigation {
+  min-width: 0;
+  width: auto;
+  flex: 1 1 0;
+  justify-content: center;
+}
+
+.ecocane-header .wp-block-navigation__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+}
+
+.ecocane-header .wp-block-navigation a,
+.ecocane-header .wp-block-navigation-item__label,
+.ecocane-header .wc-block-customer-account__link,
+.ecocane-header .wc-block-mini-cart__button {
+  color: #fff;
+}
+
+.ecocane-header .wc-block-customer-account__link svg,
+.ecocane-header .wc-block-customer-account__link img,
+.ecocane-header .wc-block-mini-cart__icon {
+  width: 36px;
+  height: 36px;
+  fill: #fff;
+}
+
+.ecocane-header .wc-block-customer-account__link img {
+  filter: brightness(0) invert(1);
+}
+
+.ecocane-header .wc-block-mini-cart {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+@media (max-width: 782px) {
+  .ecocane-header {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .ecocane-header .ecocane-brand {
+    width: min(190px, 45vw);
+    flex-basis: min(190px, 45vw);
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .ecocane-header .wp-block-navigation {
+    display: flex;
+    order: 3;
+    width: 100%;
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+
+  .ecocane-header .wp-block-navigation__container {
+    width: 100%;
+    justify-content: center;
+    gap: 8px 18px;
+  }
+}

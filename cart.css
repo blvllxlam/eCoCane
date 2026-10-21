@@ -1,0 +1,82 @@
+/* Стили корзины: убирают заголовок стандартного шаблона и оформляют блоки WooCommerce. */
+
+/* Скрывает стандартную обложку шаблона страницы, чтобы она не занимала место над корзиной. */
+body.woocommerce-cart .wp-block-cover {
+  display: none;
+}
+
+/* Ограничивает ширину корзины и выравнивает её по центру страницы. */
+.wp-block-woocommerce-cart {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--ecocane-text);
+}
+
+/* Панель итогов заказа в корзине. */
+.wc-block-cart__sidebar {
+  padding: 24px;
+  border: 1px solid var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+}
+
+/* Заголовок итогов заказа и заголовок пустой корзины. */
+.wc-block-cart__totals-title,
+.wc-block-cart__empty-cart__title {
+  color: var(--ecocane-text);
+  font-size: 1.35rem;
+  font-weight: 650;
+}
+
+/* Пустая корзина: центрирует сообщение и добавляет пространство перед каталогом. */
+.wc-block-cart__empty-cart {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+/* Кнопки продолжения покупки и перехода к оформлению заказа. */
+.wc-block-cart__submit-button,
+.wc-block-cart__empty-cart a,
+.wc-block-cart__submit-container .wc-block-components-button {
+  border-radius: 7px;
+  background: var(--ecocane-green);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Подсветка кнопок корзины при наведении. */
+.wc-block-cart__submit-button:hover,
+.wc-block-cart__empty-cart a:hover,
+.wc-block-cart__submit-container .wc-block-components-button:hover {
+  background: var(--ecocane-green-dark);
+  color: #fff;
+}
+
+/* Поля количества товара в таблице корзины. */
+.wc-block-cart .wc-block-components-quantity-selector {
+  border-color: var(--ecocane-border);
+  border-radius: 7px;
+  background: #fff;
+}
+
+/* Изображения товаров в корзине. */
+.wc-block-cart .wc-block-cart-item__image img {
+  border-radius: 8px;
+}
+
+/* На мобильном экране уменьшаем внешние отступы, сохраняя поля по бокам. */
+@media (max-width: 782px) {
+  .wp-block-woocommerce-cart {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .wc-block-cart__sidebar {
+    padding: 18px;
+  }
+}

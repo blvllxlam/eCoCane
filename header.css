@@ -1,0 +1,234 @@
+/* Стили шапки: логотип, меню, корзина и личный кабинет. */
+
+
+
+/* Сплошная зелёная шапка с текстурной плашкой логотипа. */
+.ecocane-header {
+  display: grid;
+  grid-template-columns: clamp(156px, 23vw, 320px) minmax(0, 1fr) auto;
+  grid-template-rows: 90px;
+  align-items: center;
+  justify-content: initial;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  background: var(--ecocane-green);
+}
+
+header.wp-block-template-part:has(> .ecocane-header) {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+body.admin-bar header.wp-block-template-part:has(> .ecocane-header) {
+  top: 32px;
+}
+
+@media (max-width: 782px) {
+  body.admin-bar header.wp-block-template-part:has(> .ecocane-header) {
+    top: 46px;
+  }
+}
+
+/* Содержимое групп Gutenberg участвует непосредственно в сетке шапки. */
+.ecocane-header > .wp-block-group.is-layout-flex {
+  display: contents;
+}
+
+/* Текстурная левая плашка с логотипом. */
+.ecocane-brand {
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--ecocane-green-dark);
+  background-image: url("assets/images/header-grass-texture.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Логотип сохраняет пропорции и не выходит за границы плашки. */
+.ecocane-header .ecocane-brand img {
+  display: block;
+  width: min(100%, 280px);
+  max-width: 280px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+/* Состояние логотипа при наведении и клавиатурном фокусе. */
+.ecocane-header .ecocane-brand:hover {
+  opacity: .88;
+}
+
+/* Основное меню занимает центральную колонку на сплошном зелёном фоне. */
+.ecocane-header .wp-block-navigation {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Расстояние между пунктами основного меню в шапке. */
+.ecocane-header .wp-block-navigation__container {
+  justify-content: center;
+  gap: clamp(10px, 2vw, 26px) !important;
+}
+
+/* Цвет, размер и начертание пунктов меню шапки. */
+.ecocane-header .wp-block-navigation a {
+  color: #fff !important;
+  padding: 3px 5px;
+  border-radius: 2px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Подсветка активного пункта меню и ссылки при наведении. */
+.ecocane-header .wp-block-navigation a:hover,
+.ecocane-header .wp-block-navigation .current-menu-item > a {
+  color: #e1eedf !important;
+}
+
+/* Рамка фокуса для ссылок меню, аккаунта и корзины в шапке. */
+.ecocane-header .wp-block-navigation a:focus-visible,
+.ecocane-header .wc-block-customer-account__link:focus-visible,
+.ecocane-header .wc-block-mini-cart__button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Иконка корзины и её кнопка в шапке. */
+.ecocane-header .wc-block-mini-cart {
+  margin: 0;
+}
+
+.ecocane-header > .wp-block-group.is-layout-flex:nth-child(2) {
+  display: flex;
+  grid-column: 3;
+  grid-row: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(6px, 1vw, 14px);
+  padding: 0 clamp(14px, 2vw, 26px);
+}
+
+.ecocane-header .wc-block-mini-cart__button {
+  color: #fff !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Размер значка корзины. */
+.ecocane-header .wc-block-mini-cart__icon {
+  width: 36px;
+  height: 36px;
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+/* Размер значка личного кабинета. */
+.ecocane-header .wc-block-customer-account__link svg,
+.ecocane-header .wc-block-customer-account__link img {
+  width: 36px;
+  height: 36px;
+}
+
+/* Цвет и прозрачный фон кнопки корзины при наведении. */
+.ecocane-header .wc-block-mini-cart__button:hover {
+  color: #e1eedf !important;
+  background: transparent !important;
+}
+
+/* Иконка и ссылка личного кабинета в шапке. */
+.ecocane-header .wc-block-customer-account__link {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+.ecocane-header .wp-block-woocommerce-customer-account {
+  margin: 0;
+}
+
+/* Цвет личного кабинета при наведении. */
+.ecocane-header .wc-block-customer-account__link:hover {
+  color: #e1eedf !important;
+}
+
+/* Кнопки открытия и закрытия мобильного меню и фон раскрытого меню. */
+.ecocane-header .wp-block-navigation__responsive-container-open,
+.ecocane-header .wp-block-navigation__responsive-container-close {
+  color: #fff;
+  background: transparent;
+}
+
+/* Фон раскрытого меню на небольшом экране. */
+.ecocane-header .wp-block-navigation__responsive-container.is-menu-open {
+  color: #fff;
+  background: var(--ecocane-green-dark) !important;
+}
+
+.ecocane-header .wp-block-navigation__responsive-container.is-menu-open a {
+  background: transparent;
+}
+
+/* Белый цвет ссылок в раскрытом мобильном меню. */
+.ecocane-header .wp-block-navigation__responsive-container.is-menu-open a {
+  color: #fff;
+}
+
+/* Цвет подписей ссылок внутри раскрытого мобильного меню. */
+.ecocane-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__label {
+  color: #fff !important;
+}
+
+/* Подчёркивание активного пункта меню и ссылки при наведении. */
+.ecocane-header .wp-block-navigation a:hover,
+.ecocane-header .wp-block-navigation .current-menu-item > a {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+
+/* Три линии в кнопке мобильного меню */
+.ecocane-header .wp-block-navigation__responsive-container-open svg {
+  overflow: visible;
+}
+
+.ecocane-header .wp-block-navigation__responsive-container-open svg path {
+  display: none;
+}
+
+.ecocane-header .wp-block-navigation__responsive-container-open svg {
+  background: linear-gradient(
+    to bottom,
+    #fff 0,
+    #fff 1.5px,
+    transparent 1.5px,
+    transparent 6px,
+    #fff 6px,
+    #fff 7.5px,
+    transparent 7.5px,
+    transparent 12px,
+    #fff 12px,
+    #fff 13.5px,
+    transparent 13.5px
+  );
+}

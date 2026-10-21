@@ -1,0 +1,66 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"ecocane-shop","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"48px","bottom":"88px","left":"24px","right":"24px"}}}} -->
+<main class="wp-block-group ecocane-shop" style="padding-top:48px;padding-right:24px;padding-bottom:88px;padding-left:24px">
+	<!-- wp:group {"className":"ecocane-shop__intro","layout":{"type":"constrained"},"style":{"spacing":{"margin":{"bottom":"40px"}}}} -->
+	<div class="wp-block-group ecocane-shop__intro" style="margin-bottom:40px">
+		<!-- wp:shortcode -->
+		[ecocane_catalog_title]
+		<!-- /wp:shortcode -->
+		<!-- wp:paragraph -->
+		<p>Посуда из сахарного тростника для дома и бизнеса. Смотрите ассортимент, характеристики и актуальные цены в карточках товаров.</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:shortcode -->
+	[ecocane_categories layout="links"]
+	<!-- /wp:shortcode -->
+
+	<!-- wp:woocommerce/store-notices /-->
+
+	<!-- wp:group {"className":"ecocane-shop__toolbar","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"},"style":{"spacing":{"margin":{"top":"28px","bottom":"24px"}}}} -->
+	<div class="wp-block-group ecocane-shop__toolbar" style="margin-top:28px;margin-bottom:24px">
+		<!-- wp:woocommerce/product-results-count /-->
+		<!-- wp:woocommerce/catalog-sorting /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:woocommerce/product-collection {"queryId":6,"query":{"woocommerceAttributes":[],"woocommerceStockStatus":["instock","onbackorder"],"taxQuery":[],"isProductCollectionBlock":true,"perPage":12,"pages":0,"offset":0,"postType":"product","order":"asc","orderBy":"menu_order title","author":"","search":"","exclude":[],"sticky":"","inherit":true},"tagName":"div","displayLayout":{"type":"flex","columns":4,"shrinkColumns":true},"dimensions":{"widthType":"fill","fixedWidth":""},"queryContextIncludes":["collection"],"align":"wide"} -->
+	<div class="wp-block-woocommerce-product-collection alignwide">
+		<!-- wp:woocommerce/product-template -->
+		<!-- wp:woocommerce/product-image {"showSaleBadge":true,"imageSizing":"thumbnail","isDescendentOfQueryLoop":true} -->
+		<!-- wp:woocommerce/product-sale-badge {"isDescendentOfQueryLoop":true,"align":"right"} /-->
+		<!-- /wp:woocommerce/product-image -->
+		<!-- wp:post-title {"isLink":true,"style":{"typography":{"lineHeight":"1.35"}},"fontSize":"medium","__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+		<!-- wp:woocommerce/product-price {"isDescendentOfQueryLoop":true,"fontSize":"medium","style":{"spacing":{"margin":{"bottom":"1rem"}}}} /-->
+		<!-- wp:woocommerce/product-button {"isDescendentOfQueryLoop":true,"fontSize":"small"} /-->
+		<!-- /wp:woocommerce/product-template -->
+
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"40px"}}}} -->
+		<!-- wp:query-pagination-previous /-->
+		<!-- wp:query-pagination-numbers /-->
+		<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+		<!-- wp:woocommerce/product-collection-no-results -->
+		<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","flexWrap":"wrap"},"className":"ecocane-empty-state"} -->
+		<div class="wp-block-group ecocane-empty-state">
+			<!-- wp:heading {"level":2} -->
+			<h2 class="wp-block-heading">В этой категории пока нет товаров</h2>
+			<!-- /wp:heading -->
+			<!-- wp:paragraph -->
+			<p>Посмотрите весь ассортимент в каталоге.</p>
+			<!-- /wp:paragraph -->
+			<!-- wp:button -->
+			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3/">Перейти в каталог</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:group -->
+		<!-- /wp:woocommerce/product-collection-no-results -->
+	</div>
+	<!-- /wp:woocommerce/product-collection -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

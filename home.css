@@ -1,0 +1,506 @@
+/* Стили главной страницы: промоблок, категории и карточки товаров. */
+
+
+
+/* Базовый цвет текста главной и каталога eCoCane. */
+.ecocane-home,
+.ecocane-shop {
+  color: var(--ecocane-text);
+}
+
+/* Выравнивание содержимого главного промоблока. */
+.ecocane-hero {
+  align-items: center;
+}
+
+/* Главный заголовок промоблока на главной странице. */
+.ecocane-hero__title {
+  max-width: 660px;
+  margin: 0 0 22px;
+  color: var(--ecocane-text);
+  font-size: clamp(2.55rem, 5.2vw, 4.55rem);
+  font-weight: 650;
+  letter-spacing: -.065em;
+  line-height: 1.04;
+}
+
+/* Небольшая надпись над заголовком промоблока. */
+.ecocane-eyebrow {
+  margin: 0 0 18px;
+  color: var(--ecocane-green);
+  font-size: .78rem;
+  font-weight: 750;
+  letter-spacing: .16em;
+  line-height: 1.5;
+}
+
+/* Описание в промоблоке главной страницы. */
+.ecocane-hero__description {
+  max-width: 520px;
+  margin: 0;
+  color: var(--ecocane-muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.65;
+}
+
+/* Расположение кнопок промоблока главной страницы. */
+.ecocane-hero__actions {
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* Высота и внутренние отступы кнопок главной и каталога. */
+.ecocane-home .wp-block-button__link,
+.ecocane-shop .wp-block-button__link {
+  min-height: 48px;
+  padding: 12px 22px;
+}
+
+/* Контурная кнопка промоблока и её вид при наведении. */
+.ecocane-hero__actions .is-style-outline .wp-block-button__link {
+  border: 1px solid var(--ecocane-green);
+  background: transparent;
+  color: var(--ecocane-green);
+}
+
+/* Заливка контурной кнопки при наведении. */
+.ecocane-hero__actions .is-style-outline .wp-block-button__link:hover {
+  background: var(--ecocane-green);
+  color: #fff;
+}
+
+/* Контейнер главного изображения: высота, скругление и обрезка краёв. */
+.ecocane-hero-visual {
+  position: relative;
+  height: clamp(360px, 43vw, 510px);
+  overflow: hidden;
+  border: 1px solid #ded7c8;
+  border-radius: 14px;
+  /*background: #ffb300; */
+}
+
+/* Масштабирование и кадрирование изображения внутри промоблока. */
+.ecocane-hero-visual > img {
+  position: absolute;
+  display: block;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.0);
+  transform-origin: center;
+}
+
+/* Заголовки основных секций, блока «О нас» и оптового предложения. */
+.ecocane-section > h2,
+.ecocane-about > h2,
+.ecocane-wholesale > h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -.045em;
+}
+
+/* Краткое вводное описание под заголовком секции главной страницы. */
+.ecocane-section__intro {
+  margin: 0 0 26px;
+}
+
+/* Сетка карточек категорий на главной: число колонок для широких экранов. */
+.ecocane-categories--cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Ссылки категорий без карточного оформления. */
+.ecocane-category {
+  color: var(--ecocane-text);
+  text-decoration: none;
+}
+
+/* Карточка категории: её высота, рамка, фон и расположение содержимого. */
+.ecocane-categories--cards .ecocane-category {
+  display: flex;
+  min-height: 195px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+/* Эффект карточки категории при наведении. */
+.ecocane-categories--cards .ecocane-category:hover {
+  transform: translateY(-3px);
+  border-color: #cbd9cc;
+  box-shadow: 0 8px 24px rgba(29, 70, 53, .08);
+}
+
+/* Изображение категории и его временная заглушка. */
+.ecocane-category__image,
+.ecocane-category__placeholder {
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+}
+
+/* Фон заглушки, когда у категории нет изображения. */
+.ecocane-category__placeholder {
+  background: linear-gradient(145deg, #e9e3d5, #f7f5ee);
+}
+
+/* Подпись под изображением категории. */
+.ecocane-category__name {
+  display: block;
+  padding: 14px 16px;
+  font-weight: 650;
+}
+
+/* Список категорий в виде компактных ссылок-меток. */
+.ecocane-categories--links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Внешний вид каждой ссылки-категории в списке меток. */
+.ecocane-categories--links .ecocane-category {
+  display: inline-flex;
+  padding: 9px 15px;
+  border: 1px solid var(--ecocane-border);
+  border-radius: 999px;
+  background: #fff;
+  font-size: .92rem;
+  font-weight: 600;
+}
+
+/* Цвет ссылки-категории при наведении. */
+.ecocane-categories--links .ecocane-category:hover {
+  border-color: var(--ecocane-green);
+  color: var(--ecocane-green);
+}
+
+/* Сообщение-заглушка для пустого списка или отсутствующего содержимого. */
+.ecocane-empty-state {
+  padding: 24px;
+  border: 1px solid var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+}
+
+/* Расстояние между карточками товаров главной и каталога. */
+.ecocane-home .woocommerce ul.products,
+.ecocane-shop .wc-block-product-template {
+  gap: 18px;
+}
+
+/* Карточки товаров на главной: рамка, ширина и базовые отступы. */
+.ecocane-home .woocommerce ul.products li.product {
+  box-sizing: border-box;
+  float: none;
+  width: 100% !important;
+  margin: 0;
+  padding: 14px;
+  border-color: var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+}
+
+/* Изображение товара поверх общей подложки в карточке главной и каталога. */
+.ecocane-home .woocommerce ul.products li.product a img,
+.ecocane-shop .wc-block-components-product-image img {
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0 0 14px;
+  border-radius: 8px;
+  background-color: #efede6;
+  background-image: url("assets/images/product-card-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Ссылка-обёртка товара на главной: сохраняем тот же базовый порядок, что и в каталоге. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link {
+  display: block;
+  position: relative;
+  flex: 1 0 auto;
+}
+
+/* Скрывает пустые строки и пустые абзацы, которые WooCommerce добавляет в карточку. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link > br,
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link > p:empty {
+  display: none;
+}
+
+/* Бейдж распродажи в верхнем углу изображения карточки на главной. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link > .onsale {
+  position: absolute;
+  top: 10px;
+  right: auto;
+  left: 10px;
+  z-index: 2;
+  margin: 0;
+}
+
+/* Базовые размер и положение логотипа на карточках главной и каталога. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link::after,
+.ecocane-shop .wc-block-components-product-image::after,
+.single-product .wp-block-woocommerce-product-collection .wc-block-components-product-image::after {
+  position: absolute;
+  top: auto;
+  right: 4px;
+  bottom: 18px;
+  z-index: 1;
+  width: clamp(120px, 44%, 150px);
+  aspect-ratio: 1070 / 367;
+  background: url("assets/images/ecocane-product-logo.png") center / contain no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+/* Название товара на главной — как в каталоге: без многоточия, можно переноситься по строкам. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link > .woocommerce-loop-product__title {
+  display: block;
+  margin: 0 0 10px;
+  overflow: visible;
+  padding: 0;
+  color: var(--ecocane-text);
+  font-size: 1rem;
+  line-height: 1.35;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+/* Цена товара на главной: центрируем, подпись уже выводится в HTML. */
+.ecocane-home .woocommerce ul.products li.product .price {
+  position: relative;
+  display: block;
+  color: var(--ecocane-green);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Карточки главной приводим к тому же порядку контента, что и в каталоге. */
+.ecocane-home .woocommerce ul.products li.product {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+}
+
+/* Фото товара на главной хранит тот же визуальный шаблон, что и в каталоге. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+/* Логотип на главной остаётся поверх фото, но не ломает блочную структуру карточки. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link::after {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: clamp(120px, 30%, 190px);
+  max-width: none;
+}
+
+/* Кнопка покупки в карточках главной и каталога: на всю ширину карточки. */
+.ecocane-home .woocommerce ul.products li.product .button,
+.ecocane-shop .wc-block-components-product-button .wp-block-button__link,
+.single-product .wp-block-woocommerce-product-collection .wc-block-components-product-button .wp-block-button__link {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Нижняя область карточки главной должна быть похожа на каталог: цена под заголовком и кнопка внизу. */
+.ecocane-home .woocommerce ul.products li.product > p {
+  display: block;
+  margin: 8px 0 0;
+}
+
+/* Убирает лишние переводы строк внутри нижней области карточки. */
+.ecocane-home .woocommerce ul.products li.product > p > br {
+  display: none;
+}
+
+/* Убирает переносы строк WooCommerce между ссылкой товара и ценой в карточке. */
+.ecocane-home .woocommerce ul.products li.product > p > a:not(.button) > br {
+  display: none;
+}
+
+/* Выравнивание цены и кнопки в карточке на главной — как в каталоге. */
+.ecocane-home .woocommerce ul.products li.product > p > .price,
+.ecocane-home .woocommerce ul.products li.product > p > a > .price {
+  display: block;
+  text-align: center;
+}
+
+/* Прижимает кнопку покупки к нижнему краю карточки. */
+.ecocane-home .woocommerce ul.products li.product > p > .button {
+  margin-top: 12px;
+}
+
+/* Убирает псевдоэлементы темы, которые мешают сетке карточек главной. */
+.ecocane-home .woocommerce ul.products::before,
+.ecocane-home .woocommerce ul.products::after {
+  display: none;
+}
+
+/* Сетка товаров на главной странице для широких экранов. */
+.ecocane-home .woocommerce ul.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+}
+
+/* Ограничение ширины текстового блока «О нас». */
+.ecocane-about {
+  max-width: 800px;
+}
+
+/* Цветной блок оптового предложения и его внутренние отступы. */
+.ecocane-wholesale {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(28px, 5vw, 58px);
+  border: 1px solid var(--ecocane-border);
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 85% 20%, rgba(255, 255, 255, .78), transparent 38%),
+    var(--ecocane-green-soft);
+}
+
+.ecocane-wholesale__content > .ecocane-eyebrow {
+  margin-bottom: 12px;
+  font-size: .68rem;
+  letter-spacing: .12em;
+}
+
+.ecocane-wholesale__content > h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -.045em;
+}
+
+.ecocane-wholesale__content > p:last-child {
+  max-width: 440px;
+  margin: 0;
+}
+
+.ecocane-wholesale__contacts {
+  display: grid;
+  gap: 12px;
+}
+
+.ecocane-wholesale__contact {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(40, 92, 69, .12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .82);
+  color: var(--ecocane-text);
+  text-decoration: none;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.ecocane-wholesale__contact:hover,
+.ecocane-wholesale__contact:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(40, 92, 69, .42);
+  box-shadow: 0 8px 22px rgba(29, 70, 53, .09);
+  color: var(--ecocane-green-dark);
+}
+
+.ecocane-wholesale__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ecocane-green-soft);
+  color: var(--ecocane-green);
+}
+
+.ecocane-wholesale__icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.ecocane-wholesale__contact-copy {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.ecocane-wholesale__phone-line {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+}
+
+.ecocane-wholesale__phone-line .ecocane-wholesale__value {
+  font-size: .9rem;
+}
+
+.ecocane-wholesale__messengers {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+}
+
+.ecocane-wholesale__messengers img {
+  display: block;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.ecocane-wholesale__label {
+  color: var(--ecocane-muted);
+  font-size: .8rem;
+  line-height: 1.35;
+}
+
+.ecocane-wholesale__value {
+  overflow-wrap: anywhere;
+  color: var(--ecocane-text);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.35;
+}
+
+/* Ограничение ширины заключительных абзацев в блоках «О нас» и оптового предложения. */
+.ecocane-wholesale > p:last-child,
+.ecocane-about > p:last-child {
+  max-width: 720px;
+  margin-bottom: 0;
+}

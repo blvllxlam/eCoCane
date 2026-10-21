@@ -1,0 +1,89 @@
+/* Стили страницы личного кабинета и формы входа WooCommerce. */
+
+/* Убирает крупную стандартную обложку над содержимым личного кабинета. */
+body.woocommerce-account .wp-block-cover {
+  display: none;
+}
+
+/* Карточка личного кабинета: ограничивает ширину и центрирует содержимое. */
+body.woocommerce-account .entry-content > .woocommerce {
+  box-sizing: border-box;
+  width: min(100% - 32px, 520px);
+  margin: clamp(32px, 7vw, 72px) auto;
+  padding: clamp(22px, 5vw, 36px);
+  border: 1px solid var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(29, 70, 53, .07);
+}
+
+/* Заголовок входа внутри карточки личного кабинета. */
+body.woocommerce-account .entry-content > .woocommerce > h2 {
+  margin: 0 0 24px;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+}
+
+/* Форма не должна выходить за границы карточки или стандартной колонки. */
+body.woocommerce-account .woocommerce-form-login.login {
+  float: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Поля входа занимают всю ширину карточки и имеют удобную высоту на телефоне. */
+body.woocommerce-account .woocommerce-form-login .form-row--wide input,
+body.woocommerce-account .woocommerce-form-login .password-input,
+body.woocommerce-account .woocommerce-form-login .password-input input {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+body.woocommerce-account .woocommerce-form-login .form-row--wide {
+  margin-bottom: 18px;
+}
+
+body.woocommerce-account .woocommerce-form-login .form-row--wide input {
+  min-height: 48px;
+}
+
+/* Выравнивает запоминание входа и кнопку без переполнения на узком экране. */
+body.woocommerce-account .woocommerce-form-login p.form-row:not(.form-row-wide) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+body.woocommerce-account .woocommerce-form-login__rememberme {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+body.woocommerce-account .woocommerce-form-login__submit {
+  margin-left: auto;
+}
+
+/* Ссылка восстановления пароля отделена от основных элементов формы. */
+body.woocommerce-account .woocommerce-LostPassword {
+  margin: 20px 0 0;
+}
+
+body.woocommerce-account .woocommerce-LostPassword a {
+  color: var(--ecocane-green);
+  font-weight: 600;
+}
+
+/* На узких телефонах кнопка располагается на отдельной строке и легко нажимается. */
+@media (max-width: 480px) {
+  body.woocommerce-account .woocommerce-form-login__submit {
+    width: 100%;
+    margin-left: 0;
+  }
+}

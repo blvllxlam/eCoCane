@@ -1,0 +1,597 @@
+/* Стили каталога, карточек WooCommerce и страницы товара. */
+
+
+
+/* Бейдж «Распродажа» на карточке товара. */
+.woocommerce span.onsale,
+.wc-block-components-product-sale-badge {
+  background: var(--ecocane-green);
+  border-radius: 5px;
+  min-height: 0;
+  line-height: 1.4;
+  padding: .35em .65em;
+}
+
+/* Скругление фотографии на странице отдельного товара. */
+.woocommerce div.product div.images img {
+  border-radius: var(--ecocane-radius);
+}
+
+/* Та же подложка под главным изображением и его увеличенным слоем. */
+.woocommerce div.product div.images .woocommerce-product-gallery__image img {
+  aspect-ratio: 1;
+  background-color: #efede6;
+  background-image: url("assets/images/product-card-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Общая подложка под прозрачными фотографиями во всех карточках товаров. */
+.woocommerce ul.products li.product a img,
+.wc-block-components-product-image img,
+.wc-block-grid__product-image img {
+  aspect-ratio: 1;
+  background-color: #efede6;
+  background-image: url("assets/images/product-card-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* WooCommerce задаёт cover прямо в HTML, поэтому переопределяем его для прозрачных вырезок. */
+  object-fit: contain !important;
+  object-position: center;
+}
+
+/* Заголовок товара на стандартной странице товара WooCommerce. */
+.woocommerce div.product .product_title {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+/* Калькулятор минимального заказа на странице товара. */
+.single-product .ecocane-pack-calculator {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 16px;
+  border: 1px solid var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+}
+
+.ecocane-pack-calculator__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ecocane-pack-calculator__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ecocane-pack-calculator__price {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ecocane-pack-calculator__price > span {
+  color: var(--ecocane-muted);
+  font-size: .9rem;
+}
+
+.ecocane-pack-calculator__price > strong {
+  font-size: 1.2rem;
+}
+
+.ecocane-pack-calculator__unit {
+  color: var(--ecocane-muted);
+  white-space: nowrap;
+}
+
+.single-product .ecocane-pack-calculator__cart {
+  display: block;
+  width: auto;
+  min-width: 200px;
+  max-width: 100%;
+  min-height: 48px;
+  margin: 4px 0 0;
+  justify-self: end;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.single-product .ecocane-pack-calculator__cart:hover {
+  filter: brightness(.94);
+}
+
+.ecocane-ajax-cart-notice {
+  margin: 10px 0 16px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--ecocane-green);
+  background: #f2f8f4;
+  color: var(--ecocane-text);
+}
+
+.ecocane-ajax-cart-notice.is-error {
+  border-left-color: #b42318;
+  background: #fff4f2;
+}
+
+.single-product .ecocane-product-description-sections {
+  margin-top: 2rem;
+}
+
+.single-product .ecocane-product-description-sections h2,
+.single-product .ecocane-product-description-sections h3 {
+  color: var(--ecocane-green);
+}
+
+.single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li.description_tab.active > a,
+.single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li.additional_information_tab.active > a,
+.single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li.reviews_tab.active > a {
+  color: var(--ecocane-green);
+}
+
+.single-product .woocommerce-Tabs-panel--description > h2 {
+  color: var(--ecocane-green);
+}
+
+.single-product .ecocane-product-description-section + .ecocane-product-description-section {
+  margin-top: 1.5rem;
+}
+
+.single-product .ecocane-product-description-section h2,
+.single-product .ecocane-product-description-section h3 {
+  margin: 0 0 .75rem;
+}
+
+.single-product .ecocane-product-description-section p:last-child {
+  margin-bottom: 0;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator {
+  min-width: 0;
+  width: 100%;
+  max-width: 260px;
+  padding: 8px;
+  gap: 6px;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__top {
+  gap: 6px;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__price > span {
+  font-size: .75rem;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__price > strong {
+  font-size: 1rem;
+}
+
+.single-product .grouped_form .woocommerce-grouped-product-list-item__quantity {
+  width: 260px;
+  vertical-align: top;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__summary {
+  gap: 6px;
+  font-size: .9rem;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__controls {
+  gap: 4px;
+}
+
+.single-product main .wp-block-column > .wp-block-template-part > .wp-block-woocommerce-product-price {
+  display: none;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__step {
+  width: 34px;
+  min-width: 34px;
+  height: 38px;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__controls input.qty {
+  width: 64px;
+  min-height: 38px;
+}
+
+.single-product .grouped_form .ecocane-pack-calculator__controls {
+  gap: 4px;
+}
+
+@media (max-width: 767px) {
+  .single-product .ecocane-pack-calculator__cart {
+    width: 100%;
+  }
+
+  .single-product .grouped_form .woocommerce-grouped-product-list-item__quantity {
+    width: auto;
+  }
+
+  .ecocane-pack-calculator__top {
+    flex-wrap: wrap;
+  }
+}
+
+.ecocane-pack-calculator__controls .quantity {
+  margin: 0;
+}
+
+.ecocane-pack-calculator__controls input.qty {
+  width: 96px;
+  min-height: 44px;
+  text-align: center;
+}
+
+.ecocane-pack-calculator__step {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--ecocane-border);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ecocane-text);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.ecocane-pack-calculator__step:hover {
+  border-color: var(--ecocane-green);
+  color: var(--ecocane-green);
+}
+
+.ecocane-pack-calculator__summary {
+  display: grid;
+  gap: 8px;
+}
+
+.ecocane-pack-calculator__summary p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+}
+
+.ecocane-pack-calculator__total {
+  padding-top: 8px;
+  border-top: 1px solid var(--ecocane-border);
+  font-size: 1.1rem;
+}
+
+.ecocane-pack-calculator--loop {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 8px 0 0;
+  padding: 9px;
+  border: 1px solid var(--ecocane-border);
+  border-radius: 9px;
+  background: #fbfcfa;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__top {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__price > span {
+  font-size: .72rem;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__price > strong {
+  font-size: .95rem;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__controls {
+  gap: 4px;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__step {
+  width: 32px;
+  min-width: 32px;
+  height: 34px;
+  font-size: 1.15rem;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__controls input.qty {
+  box-sizing: border-box;
+  width: 54px;
+  min-height: 34px;
+  padding: 4px;
+  font-size: .9rem;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__unit {
+  font-size: .78rem;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__summary {
+  gap: 4px;
+  font-size: .78rem;
+  line-height: 1.35;
+}
+
+.ecocane-pack-calculator--loop .ecocane-pack-calculator__total {
+  padding-top: 5px;
+  font-size: .9rem;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 9px;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__top {
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__price {
+  justify-items: center;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__controls {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+  gap: 1px;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__step {
+  box-sizing: border-box;
+  width: 24px;
+  min-width: 24px;
+  height: 30px;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__controls input.qty {
+  box-sizing: border-box;
+  width: 36px;
+  min-width: 36px;
+  min-height: 30px;
+  padding: 4px 1px;
+  font-size: .76rem;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__unit {
+  font-size: .6rem;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__summary {
+  min-width: 0;
+  gap: 4px;
+  font-size: .68rem;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__summary p {
+  min-width: 0;
+  gap: 4px;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__total {
+  font-size: .75rem;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__amount {
+  font-size: .64rem;
+  white-space: nowrap;
+}
+
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__amount .woocommerce-Price-amount,
+.single-product .wp-block-woocommerce-product-collection .ecocane-pack-calculator--loop .ecocane-pack-calculator__amount bdi {
+  font-size: inherit !important;
+}
+
+@media (max-width: 520px) {
+  .ecocane-pack-calculator--loop {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px;
+  }
+
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__top {
+    min-width: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__price {
+    justify-items: center;
+  }
+
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__controls {
+    min-width: 0;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__step {
+    width: 23px;
+    min-width: 23px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__controls input.qty {
+    width: 40px;
+    min-height: 30px;
+  }
+
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__unit {
+    font-size: .68rem;
+  }
+
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__summary,
+  .ecocane-pack-calculator--loop .ecocane-pack-calculator__summary p {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+}
+
+/* Однострочный заголовок товара в дочернем шаблоне: длинное название обрезается многоточием. */
+.single-product .ecocane-product-title {
+  max-width: 100%;
+  margin: 18px 0 24px;
+  overflow: hidden;
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Уведомления WooCommerce: добавление товара в корзину, информация и ошибки. */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+  border-top-color: var(--ecocane-green);
+  border-radius: 6px;
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before {
+  color: var(--ecocane-green);
+}
+
+/* Максимальная ширина вступительного текста каталога. */
+.ecocane-shop__intro {
+  max-width: 760px;
+}
+
+/* Заголовок каталога: отступы и адаптивный размер шрифта. */
+.ecocane-shop__intro h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  letter-spacing: -.06em;
+}
+
+/* Хлебные крошки каталога и их ссылки. */
+.ecocane-shop .woocommerce-breadcrumb,
+.ecocane-shop .woocommerce-breadcrumb a {
+  color: var(--ecocane-muted);
+}
+
+/* Цвет текста на бейдже распродажи в каталоге. */
+.ecocane-shop .wc-block-components-product-sale-badge {
+  color: #fff;
+}
+
+/* Счётчик результатов и сортировка товаров: убирает лишние внешние отступы. */
+.ecocane-shop__toolbar .wc-block-components-sort-select,
+.ecocane-shop__toolbar .woocommerce-result-count {
+  margin: 0;
+}
+
+/* Контейнер блока коллекции товаров не шире области каталога. */
+.ecocane-shop .wp-block-woocommerce-product-collection,
+.single-product .wp-block-woocommerce-product-collection {
+  max-width: 100%;
+}
+
+/* Сетка каталога на компьютере: четыре колонки и расстояние между ними. */
+.ecocane-shop .wc-block-product-template,
+.single-product .wp-block-woocommerce-product-collection .wc-block-product-template {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* Карточка товара в блоке каталога: вертикальное расположение и оформление. */
+.ecocane-shop .wc-block-product,
+.single-product .wp-block-woocommerce-product-collection .wc-block-product {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+}
+
+/* Порядок фотографии в карточке каталога. */
+.ecocane-shop .wc-block-components-product-image,
+.single-product .wp-block-woocommerce-product-collection .wc-block-components-product-image {
+  order: 0;
+}
+
+/* Пропорции фотографии товара в карточке каталога. */
+.ecocane-shop .wc-block-components-product-image img,
+.single-product .wp-block-woocommerce-product-collection .wc-block-components-product-image img {
+  aspect-ratio: 1;
+}
+
+/* Логотип уже включён в общую подложку карточек — не накладываем его повторно. */
+.ecocane-home .woocommerce ul.products li.product > .woocommerce-LoopProduct-link::after,
+.ecocane-shop .wc-block-components-product-image::after,
+.single-product .wp-block-woocommerce-product-collection .wc-block-components-product-image::after {
+  content: none;
+}
+
+/* Размер логотипа на фотографии товара в каталоге. */
+.ecocane-shop .wc-block-components-product-image::after {
+  width: clamp(64px, 38%, 100px);
+}
+
+/* Название товара в каталоге: располагается над фото и может переноситься на несколько строк. */
+.ecocane-shop .wp-block-post-title,
+.woocommerce.single-product .wp-block-woocommerce-product-collection ul.wc-block-product-template h3.wp-block-post-title {
+  order: 0;
+  flex: 1 0 auto;
+  min-width: 0;
+  margin: 0 0 10px;
+  /*overflow: hidden;*/
+  font-size: 1rem !important;
+  font-weight: 650;
+  line-height: 1.35;
+  /*text-overflow: ellipsis;*/
+  white-space: normal;
+}
+
+/* Цвет ссылки-названия товара в каталоге и состояние при наведении. */
+.ecocane-shop .wp-block-post-title a,
+.single-product .wp-block-woocommerce-product-collection .wp-block-post-title a {
+  color: var(--ecocane-text);
+  text-decoration: none;
+}
+
+.ecocane-shop .wp-block-post-title a:hover,
+.single-product .wp-block-woocommerce-product-collection .wp-block-post-title a:hover {
+  color: var(--ecocane-green);
+}
+
+/* Отступ и высота кнопки покупки в карточке каталога. */
+.ecocane-shop .wc-block-components-product-button,
+.single-product .wp-block-woocommerce-product-collection .wc-block-components-product-button {
+  margin-top: 18px;
+}
+
+.ecocane-shop .wc-block-components-product-button .wp-block-button__link,
+.single-product .wp-block-woocommerce-product-collection .wc-block-components-product-button .wp-block-button__link {
+  min-height: 48px;
+  border-radius: 7px;
+}
+
+/* Расстояние между элементами переключения страниц каталога. */
+.ecocane-shop .wp-block-query-pagination {
+  gap: 8px;
+}

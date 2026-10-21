@@ -1,0 +1,78 @@
+/* Стили оформления заказа: поля покупателя, сводка и подтверждение заказа. */
+
+/* Скрывает стандартную обложку шаблона страницы над оформлением заказа. */
+body.woocommerce-checkout .wp-block-cover {
+  display: none;
+}
+
+/* Ограничивает ширину оформления заказа и выравнивает форму по центру. */
+.wp-block-woocommerce-checkout {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--ecocane-text);
+}
+
+/* Заголовки шагов оформления заказа. */
+.wc-block-checkout__main .wc-block-components-checkout-step__title,
+.wc-block-checkout__main .wc-block-components-title {
+  color: var(--ecocane-text);
+  font-weight: 650;
+}
+
+/* Поля контактов и адреса покупателя. */
+.wc-block-checkout .wc-block-components-text-input input,
+.wc-block-checkout .wc-blocks-components-select .wc-blocks-components-select__select {
+  border-color: var(--ecocane-border);
+  border-radius: 7px;
+  background-color: #fff;
+  color: var(--ecocane-text);
+}
+
+/* Подсветка поля при вводе данных. */
+.wc-block-checkout .wc-block-components-text-input input:focus,
+.wc-block-checkout .wc-blocks-components-select .wc-blocks-components-select__select:focus {
+  border-color: var(--ecocane-green);
+  box-shadow: 0 0 0 1px var(--ecocane-green);
+  outline: none;
+}
+
+/* Панель сводки заказа. */
+.wc-block-checkout__sidebar {
+  padding: 24px;
+  border: 1px solid var(--ecocane-border);
+  border-radius: var(--ecocane-radius);
+  background: #fff;
+}
+
+/* Кнопка подтверждения заказа. */
+.wc-block-checkout__actions .wc-block-components-checkout-place-order-button {
+  min-height: 50px;
+  border: 1px solid var(--ecocane-green);
+  border-radius: 7px;
+  background: var(--ecocane-green);
+  color: #fff;
+  font-weight: 650;
+}
+
+/* Состояние кнопки подтверждения заказа при наведении. */
+.wc-block-checkout__actions .wc-block-components-checkout-place-order-button:hover {
+  border-color: var(--ecocane-green-dark);
+  background: var(--ecocane-green-dark);
+  color: #fff;
+}
+
+/* Мобильная ширина формы и панели заказа. */
+@media (max-width: 782px) {
+  .wp-block-woocommerce-checkout {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .wc-block-checkout__sidebar {
+    padding: 18px;
+  }
+}
