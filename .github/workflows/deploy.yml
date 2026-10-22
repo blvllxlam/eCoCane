@@ -31,7 +31,7 @@ jobs:
           protocol: ftp
           local-dir: ./
           server-dir: /public_html/wp-content/themes/ecocane-child/
-          dry-run: true
+          dry-run: false
           exclude: |
             **/.git*
             **/.git*/**
