@@ -417,7 +417,13 @@ add_action('wp', static function () {
     }, 6);
 });
 
-add_filter('render_block_data', static function ($parsed_block, $source_block, $parent_block) {
+add_filter('render_block_data', static function ($parsed_block, $source_block, $parent_block) 
+{
+    if (($parsed_block['blockName'] ?? '') === 'woocommerce/product-sku' && is_product()) {
+        $parsed_block['attrs']['prefix'] = 'Артикул: ';
+        return $parsed_block;
+    }
+
     if (($parsed_block['blockName'] ?? '') !== 'core/navigation' || empty($parsed_block['innerBlocks'])) {
         return $parsed_block;
     }

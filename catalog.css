@@ -143,6 +143,18 @@
   color: var(--ecocane-green);
 }
 
+.single-product .wc-block-components-product-sku > .wp-block-post-terms__prefix,
+.single-product .wc-block-components-product-sku > .sku {
+  color: var(--ecocane-green-dark);
+  font-weight: 800;
+}
+
+.single-product .wc-block-components-product-sku > .sku {
+  display: inline-block;
+  border: 2px solid var(--ecocane-green-dark);
+  padding: 2px 6px;
+}
+
 .single-product .ecocane-product-description-section + .ecocane-product-description-section {
   margin-top: 1.5rem;
 }
