@@ -139,6 +139,20 @@
   color: var(--ecocane-green);
 }
 
+@media (max-width: 768px) {
+  .single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li,
+  .single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li:hover,
+  .single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li:focus-within {
+    border-left: 0 !important;
+  }
+
+  .single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li.active,
+  .single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li:hover,
+  .single-product .wp-block-woocommerce-product-details.is-style-minimal ul.tabs.wc-tabs li:focus-within {
+    border-bottom: 2px solid var(--ecocane-green) !important;
+  }
+}
+
 .single-product .woocommerce-Tabs-panel--description > h2 {
   color: var(--ecocane-green);
 }
@@ -147,6 +161,13 @@
 .single-product .wc-block-components-product-sku > .sku {
   color: var(--ecocane-green-dark);
   font-weight: 800;
+}
+
+.single-product .wc-block-components-product-sku {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .single-product .wc-block-components-product-sku > .sku {
