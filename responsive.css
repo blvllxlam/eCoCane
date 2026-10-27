@@ -315,3 +315,9 @@
   }
 }
 
+/* Размер текста мобильного меню eCoCane */
+@media (max-width: 768px) {
+    .wp-block-navigation .wp-block-navigation-item__label {
+        font-size: 30px !important;
+    }
+}
