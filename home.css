@@ -385,6 +385,10 @@
     var(--ecocane-green-soft);
 }
 
+#wholesale-contacts {
+  scroll-margin-top: 110px;
+}
+
 .ecocane-wholesale__content > .ecocane-eyebrow {
   margin-bottom: 12px;
   font-size: .68rem;

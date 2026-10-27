@@ -460,6 +460,7 @@ add_filter('render_block_data', static function ($parsed_block, $source_block, $
             $item['attrs']['url'] = $company_url;
             $about_index = $index;
         } elseif ($label === 'Контакты') {
+            $item['attrs']['url'] = home_url('/#wholesale-contacts');
             $contacts_index = $index;
         } elseif (isset($page_urls[$label])) {
             $item['attrs']['url'] = $page_urls[$label];

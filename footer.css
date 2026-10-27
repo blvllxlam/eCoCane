@@ -71,3 +71,31 @@ footer,
   color: #e1eedf;
   font-size: .88rem;
 }
+
+@media (max-width: 782px) {
+  .ecocane-footer {
+    padding: 28px 18px !important;
+  }
+
+  .ecocane-footer > .wp-block-group {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ecocane-footer .wp-block-navigation {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .ecocane-footer .wp-block-navigation__container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .ecocane-footer .wp-block-navigation-item__content {
+    padding: 3px 0;
+  }
+}
