@@ -60,6 +60,7 @@ body.admin-bar header.wp-block-template-part:has(> .ecocane-header) {
   background-size: cover;
   text-decoration: none;
   white-space: nowrap;
+  margin: 0;
 }
 
 /* Логотип сохраняет пропорции и не выходит за границы плашки. */

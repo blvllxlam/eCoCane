@@ -72,6 +72,7 @@
 /* Контейнер главного изображения: высота, скругление и обрезка краёв. */
 .ecocane-hero-visual {
   position: relative;
+  margin: 0;
   height: clamp(360px, 43vw, 510px);
   overflow: hidden;
   border: 1px solid #ded7c8;
@@ -385,7 +386,7 @@
     var(--ecocane-green-soft);
 }
 
-#wholesale-contacts {
+#контакты {
   scroll-margin-top: 110px;
 }
 
@@ -411,6 +412,10 @@
   gap: 12px;
 }
 
+.ecocane-wholesale__contacts > .ecocane-wholesale__contact {
+  margin-block-start: 0;
+}
+
 .ecocane-wholesale__contact {
   display: flex;
   min-width: 0;
@@ -426,7 +431,7 @@
 }
 
 .ecocane-wholesale__contact:hover,
-.ecocane-wholesale__contact:focus-visible {
+.ecocane-wholesale__contact:focus-within {
   transform: translateY(-2px);
   border-color: rgba(40, 92, 69, .42);
   box-shadow: 0 8px 22px rgba(29, 70, 53, .09);
@@ -438,21 +443,18 @@
   width: 48px;
   height: 48px;
   flex: 0 0 48px;
+  margin: 0;
   place-items: center;
   border-radius: 50%;
   background: var(--ecocane-green-soft);
   color: var(--ecocane-green);
 }
 
-.ecocane-wholesale__icon svg {
+.ecocane-wholesale__icon img {
   display: block;
   width: 24px;
   height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
+  object-fit: contain;
 }
 
 .ecocane-wholesale__contact-copy {
@@ -485,6 +487,20 @@
   height: 21px;
   border-radius: 50%;
   object-fit: contain;
+}
+
+.ecocane-wholesale__messengers .wp-block-image {
+  margin: 0;
+}
+
+.ecocane-wholesale__contact-copy > p,
+.ecocane-wholesale__phone-line > p {
+  margin: 0;
+}
+
+.ecocane-wholesale__value a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .ecocane-wholesale__label {

@@ -14,6 +14,7 @@ footer,
   align-items: center;
   width: 150px;
   min-height: 48px;
+  margin: 0;
   font-size: 28px;
   font-weight: 750;
   letter-spacing: -.055em;
@@ -28,8 +29,8 @@ footer,
 }
 
 /* Клавиатурный фокус на логотипе в шапке и подвале. */
-.ecocane-header .ecocane-brand:focus-visible,
-.ecocane-footer .ecocane-brand:focus-visible {
+.ecocane-header .ecocane-brand a:focus-visible,
+.ecocane-footer .ecocane-brand a:focus-visible {
   outline: 2px solid var(--ecocane-green);
   outline-offset: 4px;
 }

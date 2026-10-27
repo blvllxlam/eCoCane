@@ -39,13 +39,9 @@
 
 		<!-- wp:column {"verticalAlignment":"center","width":"48%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%">
-			<!-- wp:group {"className":"ecocane-hero-visual","layout":{"type":"constrained"}} -->
-			<div class="wp-block-group ecocane-hero-visual">
-				<!-- wp:html -->
-				<img src="/wp-content/themes/ecocane-child/assets/images/ecocane-home-hero.jpeg" alt="Посуда из сахарного тростника на траве">
-				<!-- /wp:html -->
-			</div>
-			<!-- /wp:group -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"ecocane-hero-visual"} -->
+			<figure class="wp-block-image size-full ecocane-hero-visual"><img src="/wp-content/themes/ecocane-child/assets/images/ecocane-home-hero.jpeg" alt="Посуда из сахарного тростника на траве"/></figure>
+			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
 	</div>
@@ -102,50 +98,74 @@
 
 	<!-- wp:group {"anchor":"wholesale","className":"ecocane-wholesale","layout":{"type":"constrained"}} -->
 	<div id="wholesale" class="wp-block-group ecocane-wholesale">
-		<div class="ecocane-wholesale__content">
+		<!-- wp:group {"className":"ecocane-wholesale__content","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group ecocane-wholesale__content">
 			<!-- wp:paragraph {"className":"ecocane-eyebrow"} -->
 			<p class="ecocane-eyebrow">ДЛЯ КОМПАНИЙ И ПРОФЕССИОНАЛЬНЫХ ЗАКУПОК</p>
 			<!-- /wp:paragraph -->
-			<!-- wp:heading {"level":2} -->
-			<h2 id="wholesale-contacts" class="wp-block-heading">Оптовым клиентам</h2>
+			<!-- wp:heading {"level":2,"anchor":"контакты"} -->
+			<h2 id="контакты" class="wp-block-heading">Оптовым клиентам</h2>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph -->
 			<p>Подберём ассортимент под ваш формат работы. Цены, минимальный заказ и условия поставки уточняются для конкретной закупки.</p>
 			<!-- /wp:paragraph -->
 		</div>
-		<div class="ecocane-wholesale__contacts" aria-label="Связаться с eCoCane">
-			<a class="ecocane-wholesale__contact" href="tel:+79614446100">
-				<span class="ecocane-wholesale__icon" aria-hidden="true">
-					<svg viewBox="0 0 24 24" focusable="false">
-						<path d="M7 3.75h10A2.25 2.25 0 0 1 19.25 6v12A2.25 2.25 0 0 1 17 20.25H7A2.25 2.25 0 0 1 4.75 18V6A2.25 2.25 0 0 1 7 3.75Z"/>
-						<path d="M9 6.75h6M10 17.25h4"/>
-					</svg>
-				</span>
-				<span class="ecocane-wholesale__contact-copy">
-					<span class="ecocane-wholesale__label">Позвонить</span>
-					<span class="ecocane-wholesale__phone-line">
-						<span class="ecocane-wholesale__value">+7 (961) 444-61-00</span>
-						<span class="ecocane-wholesale__messengers" aria-label="WhatsApp, MAX и Telegram">
-							<img src="/wp-content/themes/ecocane-child/assets/images/contact-whatsapp.png" alt="">
-							<img src="/wp-content/themes/ecocane-child/assets/images/contact-max.png" alt="">
-							<img src="/wp-content/themes/ecocane-child/assets/images/contact-telegram.png" alt="">
-						</span>
-					</span>
-				</span>
-			</a>
-			<a class="ecocane-wholesale__contact" href="mailto:eCoCane@yandex.ru">
-				<span class="ecocane-wholesale__icon" aria-hidden="true">
-					<svg viewBox="0 0 24 24" focusable="false">
-						<rect x="3.75" y="5.75" width="16.5" height="12.5" rx="2"/>
-						<path d="m4.5 7 7.5 6 7.5-6"/>
-					</svg>
-				</span>
-				<span class="ecocane-wholesale__contact-copy">
-					<span class="ecocane-wholesale__label">Написать на почту</span>
-					<span class="ecocane-wholesale__value">eCoCane@yandex.ru</span>
-				</span>
-			</a>
+		<!-- /wp:group -->
+		<!-- wp:group {"className":"ecocane-wholesale__contacts","layout":{"type":"default"}} -->
+		<div class="wp-block-group ecocane-wholesale__contacts">
+			<!-- wp:group {"className":"ecocane-wholesale__contact","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+			<div class="wp-block-group ecocane-wholesale__contact">
+				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","alt":"","className":"ecocane-wholesale__icon"} -->
+				<figure class="wp-block-image size-full ecocane-wholesale__icon"><img src="/wp-content/themes/ecocane-child/assets/images/contact-phone.svg" alt=""/></figure>
+				<!-- /wp:image -->
+				<!-- wp:group {"className":"ecocane-wholesale__contact-copy","layout":{"type":"default"}} -->
+				<div class="wp-block-group ecocane-wholesale__contact-copy">
+					<!-- wp:paragraph {"className":"ecocane-wholesale__label"} -->
+					<p class="ecocane-wholesale__label">Позвонить</p>
+					<!-- /wp:paragraph -->
+					<!-- wp:group {"className":"ecocane-wholesale__phone-line","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+					<div class="wp-block-group ecocane-wholesale__phone-line">
+						<!-- wp:paragraph {"className":"ecocane-wholesale__value"} -->
+						<p class="ecocane-wholesale__value"><a href="tel:+79614446100">+7 (961) 444-61-00</a></p>
+						<!-- /wp:paragraph -->
+						<!-- wp:group {"className":"ecocane-wholesale__messengers","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+						<div class="wp-block-group ecocane-wholesale__messengers">
+							<!-- wp:image {"sizeSlug":"full","linkDestination":"none","alt":""} -->
+							<figure class="wp-block-image size-full"><img src="/wp-content/themes/ecocane-child/assets/images/contact-whatsapp.png" alt=""/></figure>
+							<!-- /wp:image -->
+							<!-- wp:image {"sizeSlug":"full","linkDestination":"none","alt":""} -->
+							<figure class="wp-block-image size-full"><img src="/wp-content/themes/ecocane-child/assets/images/contact-max.png" alt=""/></figure>
+							<!-- /wp:image -->
+							<!-- wp:image {"sizeSlug":"full","linkDestination":"none","alt":""} -->
+							<figure class="wp-block-image size-full"><img src="/wp-content/themes/ecocane-child/assets/images/contact-telegram.png" alt=""/></figure>
+							<!-- /wp:image -->
+						</div>
+						<!-- /wp:group -->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+			<!-- wp:group {"className":"ecocane-wholesale__contact","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+			<div class="wp-block-group ecocane-wholesale__contact">
+				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","alt":"","className":"ecocane-wholesale__icon"} -->
+				<figure class="wp-block-image size-full ecocane-wholesale__icon"><img src="/wp-content/themes/ecocane-child/assets/images/contact-email.svg" alt=""/></figure>
+				<!-- /wp:image -->
+				<!-- wp:group {"className":"ecocane-wholesale__contact-copy","layout":{"type":"default"}} -->
+				<div class="wp-block-group ecocane-wholesale__contact-copy">
+					<!-- wp:paragraph {"className":"ecocane-wholesale__label"} -->
+					<p class="ecocane-wholesale__label">Написать на почту</p>
+					<!-- /wp:paragraph -->
+					<!-- wp:paragraph {"className":"ecocane-wholesale__value"} -->
+					<p class="ecocane-wholesale__value"><a href="mailto:eCoCane@yandex.ru">eCoCane@yandex.ru</a></p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
 		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </main>
