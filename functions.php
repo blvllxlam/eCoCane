@@ -1037,12 +1037,15 @@ $icon = '<g transform="scale(0.0536912752)">'
     return $services;
 });
 
+
 add_action('enqueue_block_editor_assets', function () {
     wp_enqueue_script('wp-blocks');
     wp_enqueue_script('wp-element');
 
+    $icon_url = get_stylesheet_directory_uri() . '/assets/icons/max.svg';
+
     $script = <<<'JS'
-(function (blocks, element) {
+(function (blocks, element, iconUrl) {
     if (!blocks || !element) return;
 
     var el = element.createElement;
@@ -1051,16 +1054,26 @@ add_action('enqueue_block_editor_assets', function () {
         name: 'max',
         title: 'MAX',
         icon: el('img', {
-            src: window.location.origin + '/wp-content/themes/ecocane-child/assets/icons/max.svg',
-            style: { width: '24px', height: '24px' }
+            src: iconUrl,
+            style: {
+                width: '24px',
+                height: '24px',
+                objectFit: 'contain'
+            }
         }),
         attributes: {
             service: 'max'
         },
         isActive: ['service']
     });
-})(window.wp.blocks, window.wp.element);
+})(window.wp.blocks, window.wp.element, ICON_URL_PLACEHOLDER);
 JS;
+
+    $script = str_replace(
+        'ICON_URL_PLACEHOLDER',
+        wp_json_encode($icon_url),
+        $script
+    );
 
     wp_add_inline_script('wp-blocks', $script, 'after');
 });
