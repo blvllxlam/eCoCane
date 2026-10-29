@@ -1012,21 +1012,20 @@ add_shortcode('ecocane_featured_products', static function () {
 
 /* eCoCane: пользовательская социальная иконка MAX.*/
 
+
 add_filter('block_core_social_link_get_services', function ($services) {
     $icon_path = get_stylesheet_directory() . '/assets/icons/max.svg';
 
-    if (file_exists($icon_path)) {
-        $svg = file_get_contents($icon_path);
+    if (!file_exists($icon_path)) {
+        return $services;
+    }
 
-$svg_content = preg_replace(
-    '/^.*?<svg\b[^>]*>|<\/svg>.*$/si',
-    '',
-    $svg
-);
+    $svg = file_get_contents($icon_path);
 
-$icon = '<g transform="scale(0.0536912752)">'
-    . $svg_content
-    . '</g>';
+    if (preg_match('/<svg\b[^>]*>(.*?)<\/svg>/si', $svg, $matches)) {
+        $icon = '<g transform="scale(0.0536912752)">'
+            . $matches[1]
+            . '</g>';
 
         $services['max'] = [
             'name' => 'MAX',
@@ -1036,6 +1035,7 @@ $icon = '<g transform="scale(0.0536912752)">'
 
     return $services;
 });
+
 
 
 add_action('enqueue_block_editor_assets', function () {

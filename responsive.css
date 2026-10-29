@@ -321,3 +321,34 @@
         font-size: 26px !important;
     }
 }
+
+/* MAX: заменяем сломанную SVG-иконку на PNG */
+.wp-block-social-links .wp-social-link-max a {
+    position: relative;
+}
+
+.wp-block-social-links .wp-social-link-max a svg,
+.wp-block-social-links .wp-social-link-max a > g {
+    display: none !important;
+}
+
+.wp-block-social-links .wp-social-link-max a::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("/wp-content/uploads/2026/10/MAX.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* MAX: убираем фон и тень вокруг иконки */
+.wp-block-social-links .wp-social-link-max {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.wp-block-social-links .wp-social-link-max a {
+    background: transparent !important;
+    box-shadow: none !important;
+}
