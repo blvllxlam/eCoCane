@@ -1008,3 +1008,59 @@ add_shortcode('ecocane_featured_products', static function () {
         '[products ids="' . esc_attr(implode(',', $product_ids)) . '" columns="2"]'
     );
 });
+
+
+/* eCoCane: пользовательская социальная иконка MAX.*/
+
+add_filter('block_core_social_link_get_services', function ($services) {
+    $icon_path = get_stylesheet_directory() . '/assets/icons/max.svg';
+
+    if (file_exists($icon_path)) {
+        $svg = file_get_contents($icon_path);
+
+$svg_content = preg_replace(
+    '/^.*?<svg\b[^>]*>|<\/svg>.*$/si',
+    '',
+    $svg
+);
+
+$icon = '<g transform="scale(0.0536912752)">'
+    . $svg_content
+    . '</g>';
+
+        $services['max'] = [
+            'name' => 'MAX',
+            'icon' => $icon,
+        ];
+    }
+
+    return $services;
+});
+
+add_action('enqueue_block_editor_assets', function () {
+    wp_enqueue_script('wp-blocks');
+    wp_enqueue_script('wp-element');
+
+    $script = <<<'JS'
+(function (blocks, element) {
+    if (!blocks || !element) return;
+
+    var el = element.createElement;
+
+    blocks.registerBlockVariation('core/social-link', {
+        name: 'max',
+        title: 'MAX',
+        icon: el('img', {
+            src: window.location.origin + '/wp-content/themes/ecocane-child/assets/icons/max.svg',
+            style: { width: '24px', height: '24px' }
+        }),
+        attributes: {
+            service: 'max'
+        },
+        isActive: ['service']
+    });
+})(window.wp.blocks, window.wp.element);
+JS;
+
+    wp_add_inline_script('wp-blocks', $script, 'after');
+});
