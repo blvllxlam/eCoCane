@@ -352,3 +352,9 @@
     background: transparent !important;
     box-shadow: none !important;
 }
+
+/* Обводка и тень */
+.contact-card:hover {
+    border-color: #4b8b3b !important;
+    box-shadow: 0 6px 20px rgba(75, 139, 59, 0.18);
+}
